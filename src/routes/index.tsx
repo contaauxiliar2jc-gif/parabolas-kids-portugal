@@ -1,24 +1,493 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Countdown } from "@/components/landing/Countdown";
+import { bonuses, faqs, temas, testemunhos } from "@/components/landing/data";
+import mockup from "@/assets/mockup-central.jpg";
+import temaEmocoes from "@/assets/tema-emocoes.jpg";
+import temaFe from "@/assets/tema-fe.jpg";
+import kitAtividades from "@/assets/kit-atividades.jpg";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
 export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title: "1001 Parábolas Kids — Histórias para ensinar valores com fé" },
+      {
+        name: "description",
+        content:
+          "1001 parábolas bíblicas para crianças, em português de Portugal. Ensine um valor cristão em 10 minutos por dia. Planos desde 4,90 €/mês.",
+      },
+      { property: "og:title", content: "1001 Parábolas Kids — Ensinar valores com fé" },
+      {
+        property: "og:description",
+        content:
+          "Histórias curtas, versículo, lição, missão e oração. Planos mensais desde 4,90 €. Garantia de 30 dias.",
+      },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+  }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
+function CTA({ label = "SIM! QUERO COMEÇAR AGORA" }: { label?: string }) {
+  return (
+    <div className="text-center">
+      <a
+        href="#planos"
+        className="inline-flex items-center justify-center gap-2 rounded-full bg-brand-green px-8 py-4 text-base font-extrabold text-primary-foreground shadow-lg transition-transform hover:scale-[1.03] sm:text-lg"
+      >
+        {label} →
+      </a>
+      <p className="mt-3 text-sm text-brand-dark/70">
+        Planos desde 4,90 €/mês · Cancele quando quiser · Garantia de 30 dias
+      </p>
+    </div>
+  );
+}
+
+function Section({
+  children,
+  className = "",
+  id,
+}: {
+  children: React.ReactNode;
+  className?: string;
+  id?: string;
+}) {
+  return (
+    <section id={id} className={`px-4 py-14 sm:py-20 ${className}`}>
+      <div className="mx-auto max-w-6xl">{children}</div>
+    </section>
+  );
+}
+
 function Index() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
+    <main className="bg-brand-cream text-brand-dark">
+      <Countdown />
+
+      {/* HERO */}
+      <Section className="bg-brand-cream">
+        <div className="grid items-center gap-10 md:grid-cols-2">
+          <div className="text-center md:text-left">
+            <span className="inline-block rounded-full bg-brand-gold/25 px-4 py-1 text-sm font-bold text-brand-dark">
+              Feito para famílias portuguesas
+            </span>
+            <h1 className="mt-4 text-4xl leading-tight font-bold sm:text-5xl">
+              <span className="text-brand-green">1001 Parábolas Kids</span> para ensinar valores em
+              casa
+            </h1>
+            <p className="mt-4 text-lg text-brand-dark/80">
+              Histórias que fortalecem a fé e o propósito com{" "}
+              <strong>10 minutos por dia</strong>.
+            </p>
+            <div className="mt-6 flex flex-wrap items-end justify-center gap-3 md:justify-start">
+              <span className="text-lg text-brand-dark/70 line-through">De 14,90 €/mês</span>
+              <span className="text-sm font-semibold">Por apenas</span>
+              <span className="text-4xl font-bold text-brand-green">4,90 €/mês</span>
+            </div>
+            <p className="mt-3 text-sm font-bold text-red-600">
+              Risco Zero! Mas precisa de agir rápido.
+            </p>
+            <div className="mt-8">
+              <CTA />
+            </div>
+          </div>
+          <img
+            src={mockup}
+            alt="Coleção 1001 Parábolas Kids em livro e tablet"
+            width={1024}
+            height={800}
+            className="w-full rounded-3xl shadow-xl"
+          />
+        </div>
+      </Section>
+
+      {/* INTRO */}
+      <Section className="bg-brand-dark text-white">
+        <p className="mx-auto max-w-3xl text-center text-xl font-semibold sm:text-2xl">
+          Feito para pais, professores e catequistas que querem mais do que entreter:{" "}
+          <span className="text-brand-gold">
+            querem educar com fé e deixar um legado.
+          </span>
+        </p>
+      </Section>
+
+      {/* TEMAS */}
+      <Section>
+        <h2 className="text-center text-3xl font-bold sm:text-4xl">
+          Veja alguns exemplos destas parábolas incríveis
+        </h2>
+        <p className="mt-2 text-center text-lg text-brand-dark/80">divididas por temas:</p>
+
+        <div className="mt-10 grid gap-8 md:grid-cols-2">
+          {[
+            { img: temaEmocoes, emoji: "🧘", t: "Controlo Emocional e Temperamento" },
+            { img: temaFe, emoji: "🙏", t: "Fé e Confiança em Deus" },
+          ].map((c) => (
+            <article key={c.t} className="overflow-hidden rounded-3xl bg-white shadow-md">
+              <img
+                src={c.img}
+                alt={`Parábolas Kids — ${c.t}`}
+                width={800}
+                height={1000}
+                loading="lazy"
+                className="h-72 w-full object-cover"
+              />
+              <div className="p-5 text-center">
+                <h3 className="text-xl font-bold">
+                  <span className="text-brand-green">Parábolas Kids — </span>
+                  {c.t} {c.emoji}
+                </h3>
+              </div>
+            </article>
+          ))}
+        </div>
+
+        <p className="mt-12 text-center text-lg font-semibold">E abordamos também temas como:</p>
+        <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {temas.map((t) => (
+            <div
+              key={t.title}
+              className="rounded-2xl bg-white p-5 text-center shadow-sm ring-1 ring-brand-dark/5"
+            >
+              <div className="text-3xl">{t.emoji}</div>
+              <h3 className="mt-2 text-base font-bold">
+                <span className="text-brand-green">Parábolas Kids — </span>
+                {t.title}
+              </h3>
+            </div>
+          ))}
+        </div>
+        <p className="mt-6 text-center text-lg font-bold text-brand-dark/80">…e muito mais!</p>
+
+        <div className="mt-10">
+          <CTA />
+        </div>
+      </Section>
+
+      {/* BENEFÍCIOS */}
+      <Section className="bg-white">
+        <h2 className="text-center text-3xl font-bold sm:text-4xl">
+          Principais benefícios deste material:
+        </h2>
+        <ul className="mx-auto mt-8 grid max-w-4xl gap-4 sm:grid-cols-2">
+          {[
+            "10 minutos por dia bastam para ensinar um valor cristão",
+            "Sem sair de casa, sem material extra — tudo pronto no seu telemóvel",
+            "Fortalece o vínculo entre pais e filhos através da Palavra",
+            "Subscrição mensal simples, cancele quando quiser",
+            "Novos conteúdos e atualizações incluídos todos os meses",
+            "Pronto para imprimir, usar no tablet ou no computador",
+          ].map((b) => (
+            <li key={b} className="flex gap-3 rounded-2xl bg-brand-cream p-4">
+              <span className="font-bold text-brand-green">✓</span>
+              <span className="text-brand-dark/80">{b}</span>
+            </li>
+          ))}
+        </ul>
+      </Section>
+
+      {/* COMO FUNCIONA */}
+      <Section>
+        <h2 className="text-center text-3xl font-bold sm:text-4xl">
+          Como funciona — <span className="text-brand-green">simples assim</span>
+        </h2>
+        <div className="mt-10 grid gap-6 md:grid-cols-3">
+          {[
+            {
+              t: "Escolha o seu plano",
+              d: "Subscreva por 4,90 €/mês ou 7,90 €/mês. Pagamento seguro, sem fidelização.",
+            },
+            {
+              t: "Receba o acesso no seu e-mail",
+              d: "Em poucos minutos recebe o link com todo o conteúdo e bónus.",
+            },
+            {
+              t: "Ensine com 10 minutos por dia",
+              d: "Escolha uma parábola, leia com o seu filho e viva o valor daquele dia.",
+            },
+          ].map((s, i) => (
+            <div key={s.t} className="rounded-3xl bg-white p-6 text-center shadow-sm">
+              <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-brand-green text-xl font-bold text-primary-foreground">
+                {i + 1}
+              </div>
+              <h3 className="mt-4 text-xl font-bold">{s.t}</h3>
+              <p className="mt-2 text-brand-dark/80">{s.d}</p>
+            </div>
+          ))}
+        </div>
+      </Section>
+
+      {/* TESTEMUNHOS */}
+      <Section className="bg-brand-dark text-white">
+        <h2 className="text-center text-3xl font-bold sm:text-4xl">
+          O que dizem sobre este material:
+        </h2>
+        <div className="mt-10 grid gap-6 md:grid-cols-3">
+          {testemunhos.map((t) => (
+            <blockquote key={t.nome} className="rounded-3xl bg-white/5 p-6">
+              <div className="text-brand-gold">★★★★★</div>
+              <p className="mt-3 text-white/80">“{t.texto}”</p>
+              <footer className="mt-4 text-sm font-bold">
+                {t.nome} · <span className="text-white/60">{t.local}</span>
+              </footer>
+            </blockquote>
+          ))}
+        </div>
+      </Section>
+
+      {/* O QUE RECEBE */}
+      <Section className="bg-white">
+        <div className="grid items-center gap-10 md:grid-cols-2">
+          <div>
+            <h2 className="text-3xl font-bold sm:text-4xl">O que recebe:</h2>
+            <ul className="mt-6 space-y-3 text-brand-dark/80">
+              {[
+                "📘 Até 1001 Parábolas Kids para ensinar valores com fé e criatividade",
+                "🧒 História curtinha e simbólica, com linguagem infantil",
+                "📖 Versículo bíblico fácil de memorizar",
+                "💛 Lição do dia com aplicação prática",
+                "🎯 Missão Kids com desafio leve para viver o que aprendeu",
+                "🙏 Oração curtinha para reforçar o valor no coração da criança",
+              ].map((i) => (
+                <li key={i}>{i}</li>
+              ))}
+            </ul>
+            <ul className="mt-6 space-y-2">
+              {[
+                "Organizadas em 10 temas essenciais para a formação do carácter cristão",
+                "Pronto para imprimir, usar em tablet, telemóvel ou computador",
+                "Conteúdo completo e atualizações mensais incluídas",
+                "Visual 100% adaptado ao universo infantil cristão",
+              ].map((i) => (
+                <li key={i} className="flex gap-2">
+                  <span>✅</span>
+                  <span className="text-brand-dark/80">{i}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <img
+            src={kitAtividades}
+            alt="Kit de atividades imprimíveis do 1001 Parábolas Kids"
+            width={900}
+            height={700}
+            loading="lazy"
+            className="w-full rounded-3xl shadow-lg"
+          />
+        </div>
+      </Section>
+
+      {/* BÓNUS */}
+      <Section>
+        <h2 className="text-center text-3xl font-bold sm:text-4xl">
+          Bónus <span className="text-brand-green">exclusivos</span> ao subscrever hoje:
+        </h2>
+        <div className="mt-10 grid gap-6 sm:grid-cols-2">
+          {bonuses.map((b) => (
+            <div key={b.n} className="rounded-3xl bg-white p-6 shadow-sm ring-1 ring-brand-dark/5">
+              <h3 className="text-lg font-bold">
+                🎁 Bónus <span className="text-brand-green">{b.n}</span> — {b.title}
+              </h3>
+              <p className="mt-2 text-brand-dark/80">{b.desc}</p>
+              <p className="mt-4 text-sm">
+                Valor: <span className="font-bold text-brand-gold">{b.value}</span>{" "}
+                <span className="ml-2 rounded-full bg-brand-green px-3 py-1 text-xs font-extrabold text-primary-foreground">
+                  INCLUÍDO NO PREMIUM
+                </span>
+              </p>
+            </div>
+          ))}
+        </div>
+      </Section>
+
+      {/* PLANOS */}
+      <Section id="planos" className="bg-white">
+        <h2 className="text-center text-3xl font-bold sm:text-4xl">Escolha o seu plano:</h2>
+        <p className="mt-3 text-center text-brand-dark/80">
+          Dois planos mensais em euros. Sem fidelização, cancele quando quiser.
+        </p>
+
+        <div className="mt-10 grid gap-8 lg:grid-cols-2">
+          {/* PLANO BÁSICO */}
+          <div className="flex flex-col rounded-3xl bg-brand-cream p-8 ring-1 ring-brand-dark/10">
+            <h3 className="text-2xl font-bold">395 Parábolas Kids</h3>
+            <p className="mt-1 text-sm text-brand-dark/70">Para começar a ensinar em casa</p>
+            <div className="mt-6 flex items-end gap-2">
+              <span className="text-5xl font-bold text-brand-dark">4,90 €</span>
+              <span className="pb-1 text-brand-dark/70">/mês</span>
+            </div>
+            <ul className="mt-6 space-y-2 text-brand-dark/80">
+              <li>✅ 395 parábolas ilustradas</li>
+              <li>✅ Versículo, lição, Missão Kids e oração</li>
+              <li>✅ Ficheiros PDF prontos a imprimir</li>
+              <li>✅ Acesso em telemóvel, tablet e computador</li>
+            </ul>
+
+            <p className="mt-6 text-sm font-bold">Bónus:</p>
+            <ul className="mt-2 space-y-2">
+              {bonuses.map((b, i) => (
+                <li key={b.n} className="flex gap-2 text-sm">
+                  {i === 0 ? (
+                    <>
+                      <span className="text-brand-green">✓</span>
+                      <span className="text-brand-dark/80">
+                        Bónus {b.n} — {b.title}
+                      </span>
+                    </>
+                  ) : (
+                    <>
+                      <span className="text-red-600">✕</span>
+                      <span className="text-red-600 line-through">
+                        Bónus {b.n} — {b.title}
+                      </span>
+                    </>
+                  )}
+                </li>
+              ))}
+            </ul>
+
+            <a
+              href="#planos"
+              className="mt-8 inline-flex items-center justify-center rounded-full border-2 border-brand-green px-6 py-3 font-extrabold text-brand-green transition-colors hover:bg-brand-green hover:text-primary-foreground"
+            >
+              Subscrever por 4,90 €/mês
+            </a>
+          </div>
+
+          {/* PLANO PREMIUM */}
+          <div className="relative flex flex-col rounded-3xl bg-brand-dark p-8 text-white shadow-xl">
+            <span className="absolute -top-3 left-8 rounded-full bg-brand-gold px-4 py-1 text-xs font-extrabold text-brand-dark">
+              MAIS COMPLETO
+            </span>
+            <h3 className="text-2xl font-bold">1001 Parábolas Kids · Premium</h3>
+            <p className="mt-1 text-sm text-white/60">Tudo incluído, todos os bónus</p>
+            <div className="mt-6 flex items-end gap-2">
+              <span className="text-5xl font-bold text-brand-gold">7,90 €</span>
+              <span className="pb-1 text-white/60">/mês</span>
+            </div>
+            <ul className="mt-6 space-y-2 text-white/80">
+              <li>✅ 1001 parábolas ilustradas (coleção completa)</li>
+              <li>✅ Versículo, lição, Missão Kids e oração</li>
+              <li>✅ Ficheiros PDF prontos a imprimir</li>
+              <li>✅ Novos conteúdos todos os meses</li>
+              <li>✅ +50 virtudes e valores cristãos abordados</li>
+            </ul>
+
+            <p className="mt-6 text-sm font-bold">Bónus incluídos:</p>
+            <ul className="mt-2 space-y-2">
+              {bonuses.map((b) => (
+                <li key={b.n} className="flex gap-2 text-sm">
+                  <span className="text-brand-gold">✓</span>
+                  <span className="text-white/80">
+                    Bónus {b.n} — {b.title}
+                  </span>
+                </li>
+              ))}
+            </ul>
+
+            <a
+              href="#planos"
+              className="mt-8 inline-flex items-center justify-center rounded-full bg-brand-green px-6 py-3 font-extrabold text-primary-foreground transition-transform hover:scale-[1.02]"
+            >
+              Subscrever Premium por 7,90 €/mês
+            </a>
+          </div>
+        </div>
+
+        {/* COMPARAÇÃO */}
+        <div className="mt-12 overflow-x-auto rounded-3xl ring-1 ring-brand-dark/10">
+          <table className="w-full min-w-[560px] text-left text-sm">
+            <thead className="bg-brand-cream">
+              <tr>
+                <th className="p-4">Comparação de planos</th>
+                <th className="p-4 text-center">395 Parábolas · 4,90 €</th>
+                <th className="p-4 text-center">Premium 1001 · 7,90 €</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-brand-dark/10 bg-white">
+              {[
+                ["Número de parábolas", "395", "1001"],
+                ["Missão Kids e oração", "sim", "sim"],
+                ["PDF para imprimir", "sim", "sim"],
+                ["Novos conteúdos mensais", "nao", "sim"],
+                [`Bónus 1 — ${bonuses[0]!.title}`, "sim", "sim"],
+                [`Bónus 2 — ${bonuses[1]!.title}`, "nao", "sim"],
+                [`Bónus 3 — ${bonuses[2]!.title}`, "nao", "sim"],
+                [`Bónus 4 — ${bonuses[3]!.title}`, "nao", "sim"],
+              ].map(([label, a, b]) => (
+                <tr key={label}>
+                  <td className="p-4 text-brand-dark/80">{label}</td>
+                  <td className="p-4 text-center">
+                    {a === "sim" ? (
+                      <span className="font-bold text-brand-green">✓</span>
+                    ) : a === "nao" ? (
+                      <span className="font-bold text-red-600">✕</span>
+                    ) : (
+                      <span className="font-bold">{a}</span>
+                    )}
+                  </td>
+                  <td className="p-4 text-center">
+                    {b === "sim" ? (
+                      <span className="font-bold text-brand-green">✓</span>
+                    ) : (
+                      <span className="font-bold">{b}</span>
+                    )}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+        <p className="mt-6 text-center text-sm text-brand-dark/70">
+          ⚠️ Preços promocionais válidos apenas hoje · IVA incluído
+        </p>
+      </Section>
+
+      {/* GARANTIA */}
+      <Section>
+        <div className="mx-auto max-w-3xl rounded-3xl bg-white p-8 text-center shadow-sm">
+          <div className="text-5xl">🛡️</div>
+          <h2 className="mt-4 text-2xl font-bold">Garantia de satisfação de 30 dias</h2>
+          <p className="mt-3 text-brand-dark/80">
+            Tem 30 dias para experimentar todo o conteúdo. Se não gostar, basta pedir o reembolso
+            por e-mail — sem burocracia e sem perguntas.
+          </p>
+        </div>
+      </Section>
+
+      {/* FAQ */}
+      <Section className="bg-white">
+        <h2 className="text-center text-3xl font-bold sm:text-4xl">❓ Perguntas frequentes</h2>
+        <div className="mx-auto mt-8 max-w-3xl space-y-3">
+          {faqs.map((f) => (
+            <details
+              key={f.q}
+              className="group rounded-2xl bg-brand-cream p-5 ring-1 ring-brand-dark/5"
+            >
+              <summary className="flex cursor-pointer items-center justify-between gap-4 font-bold">
+                {f.q}
+                <span className="text-brand-green transition-transform group-open:rotate-45">
+                  +
+                </span>
+              </summary>
+              <p className="mt-3 text-brand-dark/80">{f.a}</p>
+            </details>
+          ))}
+        </div>
+        <div className="mt-10">
+          <CTA label="QUERO GARANTIR O MEU ACESSO" />
+        </div>
+      </Section>
+
+      <footer className="bg-brand-dark px-4 py-10 text-center text-sm text-white/60">
+        <p>© {new Date().getFullYear()} 1001 Parábolas Kids. Todos os direitos reservados.</p>
+        <p className="mt-2">
+          Conteúdo protegido por direitos de autor. Reprodução não autorizada sujeita a penalizações
+          legais.
+        </p>
+      </footer>
+    </main>
   );
 }
