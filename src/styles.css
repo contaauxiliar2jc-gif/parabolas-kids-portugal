@@ -59,24 +59,34 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
+  --color-brand-cream: var(--brand-cream);
+  --color-brand-dark: var(--brand-dark);
+  --color-brand-gold: var(--brand-gold);
+  --color-brand-green: var(--brand-green);
+  --font-display: Fredoka, ui-sans-serif, system-ui, sans-serif;
+  --font-sans: Nunito, ui-sans-serif, system-ui, sans-serif;
 }
 
 :root {
   --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.129 0.042 264.695);
+  --brand-cream: oklch(97.3% 0.015 85);
+  --brand-dark: oklch(23% 0.03 55);
+  --brand-gold: oklch(78% 0.14 75);
+  --brand-green: oklch(62% 0.17 145);
+  --background: oklch(97.3% 0.015 85);
+  --foreground: oklch(22% 0.03 60);
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.129 0.042 264.695);
+  --card-foreground: oklch(22% 0.03 60);
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.129 0.042 264.695);
-  --primary: oklch(0.208 0.042 265.755);
-  --primary-foreground: oklch(0.984 0.003 247.858);
-  --secondary: oklch(0.968 0.007 247.896);
-  --secondary-foreground: oklch(0.208 0.042 265.755);
-  --muted: oklch(0.968 0.007 247.896);
-  --muted-foreground: oklch(0.554 0.046 257.417);
-  --accent: oklch(0.968 0.007 247.896);
-  --accent-foreground: oklch(0.208 0.042 265.755);
+  --popover-foreground: oklch(22% 0.03 60);
+  --primary: oklch(62% 0.17 145);
+  --primary-foreground: oklch(98% 0.01 90);
+  --secondary: oklch(23% 0.03 55);
+  --secondary-foreground: oklch(98% 0.01 90);
+  --muted: oklch(94% 0.02 85);
+  --muted-foreground: oklch(45% 0.03 60);
+  --accent: oklch(78% 0.14 75);
+  --accent-foreground: oklch(22% 0.03 60);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.984 0.003 247.858);
   --border: oklch(0.929 0.013 255.508);
@@ -140,5 +150,13 @@
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
+    font-family: var(--font-sans);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
   }
 }
