@@ -13,13 +13,13 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "1001 parábolas bíblicas para crianças, em português de Portugal. Ensine um valor cristão em 10 minutos por dia. Planos desde 4,90 €/mês.",
+          "1001 parábolas bíblicas para crianças, em português de Portugal. Ensine um valor cristão em 10 minutos por dia. Pagamento único desde 4,90 €.",
       },
       { property: "og:title", content: "1001 Parábolas Kids — Ensinar valores com fé" },
       {
         property: "og:description",
         content:
-          "Histórias curtas, versículo, lição, missão e oração. Planos mensais desde 4,90 €. Garantia de 30 dias.",
+          "Histórias curtas, versículo, lição, missão e oração. Pagamento único desde 4,90 €. Garantia de 15 dias.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -38,7 +38,7 @@ function CTA({ label = "SIM! QUERO COMEÇAR AGORA" }: { label?: string }) {
         {label} →
       </a>
       <p className="mt-3 text-sm text-brand-dark/70">
-        Planos desde 4,90 €/mês · Cancele quando quiser · Garantia de 30 dias
+        Pagamento único desde 4,90 € · Acesso vitalício · Garantia de 15 dias
       </p>
     </div>
   );
@@ -81,12 +81,15 @@ function Index() {
               <strong>10 minutos por dia</strong>.
             </p>
             <div className="mt-6 flex flex-wrap items-end justify-center gap-3 md:justify-start">
-              <span className="text-lg text-brand-dark/70 line-through">De 14,90 €/mês</span>
-              <span className="text-sm font-semibold">Por apenas</span>
-              <span className="text-4xl font-bold text-brand-green">4,90 €/mês</span>
+              <span className="text-lg text-brand-dark/70 line-through">De 14,90 €</span>
+              <span className="text-sm font-semibold">Pagamento único de apenas</span>
+              <span className="text-4xl font-bold text-brand-green">4,90 €</span>
             </div>
-            <p className="mt-3 text-sm font-bold text-red-600">
-              Risco Zero! Mas precisa de agir rápido.
+            <p className="mt-3 text-sm font-bold text-brand-green">
+              🛡️ Garantia incondicional de 15 dias — risco zero!
+            </p>
+            <p className="mt-1 text-sm font-bold text-red-600">
+              Sem mensalidades. Paga uma vez e fica com acesso para sempre.
             </p>
             <div className="mt-8">
               <CTA />
@@ -175,8 +178,8 @@ function Index() {
             "10 minutos por dia bastam para ensinar um valor cristão",
             "Sem sair de casa, sem material extra — tudo pronto no seu telemóvel",
             "Fortalece o vínculo entre pais e filhos através da Palavra",
-            "Subscrição mensal simples, cancele quando quiser",
-            "Novos conteúdos e atualizações incluídos todos os meses",
+            "Pagamento único — sem mensalidades nem renovações",
+            "Garantia de 15 dias: se não gostar, devolvemos o seu dinheiro",
             "Pronto para imprimir, usar no tablet ou no computador",
           ].map((b) => (
             <li key={b} className="flex gap-3 rounded-2xl bg-brand-cream p-4">
@@ -196,7 +199,7 @@ function Index() {
           {[
             {
               t: "Escolha o seu plano",
-              d: "Subscreva por 4,90 €/mês ou 7,90 €/mês. Pagamento seguro, sem fidelização.",
+              d: "Pagamento único de 4,90 € ou 7,90 €. Paga uma vez, acesso vitalício, sem fidelização.",
             },
             {
               t: "Receba o acesso no seu e-mail",
@@ -305,7 +308,7 @@ function Index() {
       <Section id="planos" className="bg-white">
         <h2 className="text-center text-3xl font-bold sm:text-4xl">Escolha o seu plano:</h2>
         <p className="mt-3 text-center text-brand-dark/80">
-          Dois planos mensais em euros. Sem fidelização, cancele quando quiser.
+          Dois planos de pagamento único em euros. Paga uma só vez, sem mensalidades, e fica com acesso para sempre — com garantia de 15 dias.
         </p>
 
         <div className="mt-10 grid gap-8 lg:grid-cols-2">
@@ -315,7 +318,7 @@ function Index() {
             <p className="mt-1 text-sm text-brand-dark/70">Para começar a ensinar em casa</p>
             <div className="mt-6 flex items-end gap-2">
               <span className="text-5xl font-bold text-brand-dark">4,90 €</span>
-              <span className="pb-1 text-brand-dark/70">/mês</span>
+              <span className="pb-1 text-brand-dark/70">pagamento único</span>
             </div>
             <ul className="mt-6 space-y-2 text-brand-dark/80">
               <li>✅ 395 parábolas ilustradas</li>
@@ -351,8 +354,11 @@ function Index() {
               href="#planos"
               className="mt-8 inline-flex items-center justify-center rounded-full border-2 border-brand-green px-6 py-3 font-extrabold text-brand-green transition-colors hover:bg-brand-green hover:text-primary-foreground"
             >
-              Subscrever por 4,90 €/mês
+              Obter acesso por 4,90 €
             </a>
+            <p className="mt-3 text-center text-xs text-brand-dark/70">
+              Pagamento único · Garantia de 15 dias
+            </p>
           </div>
 
           {/* PLANO PREMIUM */}
@@ -364,7 +370,7 @@ function Index() {
             <p className="mt-1 text-sm text-white/60">Tudo incluído, todos os bónus</p>
             <div className="mt-6 flex items-end gap-2">
               <span className="text-5xl font-bold text-brand-gold">7,90 €</span>
-              <span className="pb-1 text-white/60">/mês</span>
+              <span className="pb-1 text-white/60">pagamento único</span>
             </div>
             <ul className="mt-6 space-y-2 text-white/80">
               <li>✅ 1001 parábolas ilustradas (coleção completa)</li>
@@ -390,8 +396,11 @@ function Index() {
               href="#planos"
               className="mt-8 inline-flex items-center justify-center rounded-full bg-brand-green px-6 py-3 font-extrabold text-primary-foreground transition-transform hover:scale-[1.02]"
             >
-              Subscrever Premium por 7,90 €/mês
+              Obter Premium por 7,90 €
             </a>
+            <p className="mt-3 text-center text-xs text-white/60">
+              Pagamento único · Garantia de 15 dias
+            </p>
           </div>
         </div>
 
@@ -449,10 +458,11 @@ function Index() {
       <Section>
         <div className="mx-auto max-w-3xl rounded-3xl bg-white p-8 text-center shadow-sm">
           <div className="text-5xl">🛡️</div>
-          <h2 className="mt-4 text-2xl font-bold">Garantia de satisfação de 30 dias</h2>
+          <h2 className="mt-4 text-2xl font-bold">Garantia de satisfação de 15 dias</h2>
           <p className="mt-3 text-brand-dark/80">
-            Tem 30 dias para experimentar todo o conteúdo. Se não gostar, basta pedir o reembolso
-            por e-mail — sem burocracia e sem perguntas.
+            Tem 15 dias para experimentar todo o conteúdo sem qualquer risco. Se não gostar, basta
+            pedir o reembolso por e-mail — sem burocracia e sem perguntas. Devolvemos o valor na
+            totalidade.
           </p>
         </div>
       </Section>
