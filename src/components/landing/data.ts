@@ -90,6 +90,6 @@ export const testemunhos = [
     nome: "Inês C.",
     local: "Porto",
     texto:
-      "Comecei no plano de 4,90 € e pouco depois fiz o upgrade para o Premium. Pagamento único e vale cada cêntimo pelos bónus.",
+      "Agora entendo porque Jesus ensinava com parábolas: elas têm um efeito muito grande. Há coisas que os meus filhos nunca fizeram quando eu falava com eles e agora fazem, só por causa de algumas das parábolas que escolhi contar-lhes. Este material é meeesmo muito bom, recomendo muito!",
   },
 ];
