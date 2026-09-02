@@ -3,27 +3,35 @@ export const bonuses = [
     n: 1,
     title: "Coleção de Atividades Interativas para Crianças",
     desc: "Atividades lúdicas e interativas para reforçar os valores aprendidos a brincar.",
-    value: "19,90 €",
+    value: "9,90 €",
   },
   {
     n: 2,
     title: "Atividades Educativas do Bom Samaritano",
     desc: "Um conjunto especial de atividades sobre a parábola do Bom Samaritano para ensinar compaixão.",
-    value: "24,90 €",
+    value: "12,90 €",
   },
   {
     n: 3,
     title: "Pequeno Devocional Infantil",
     desc: "Devocional leve e afetuoso para criar momentos diários de fé entre pais e filhos.",
-    value: "14,90 €",
+    value: "7,90 €",
   },
   {
     n: 4,
     title: "Calendário de Virtudes Imprimível",
     desc: "Um plano anual para acompanhar as virtudes trabalhadas em cada semana.",
-    value: "12,90 €",
+    value: "6,90 €",
+  },
+  {
+    n: 5,
+    title: "Músicas Cristãs Infantis Para Crianças",
+    desc: "Uma seleção de músicas cristãs infantis para cantar em família e fixar os valores de cada parábola.",
+    value: "3,90 €",
   },
 ];
+
+export const bonusesTotal = "41,40 €";
 
 export const temas = [
   { emoji: "🎯", title: "Obediência e Escolhas Certas" },
