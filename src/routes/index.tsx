@@ -358,7 +358,9 @@ function Index() {
             </ul>
 
             <a
-              href="#planos"
+              href="https://checkout.escalepay.com/9086424"
+              target="_blank"
+              rel="noopener noreferrer"
               className="mt-8 inline-flex items-center justify-center rounded-full border-2 border-brand-green px-6 py-3 font-extrabold text-brand-green transition-colors hover:bg-brand-green hover:text-primary-foreground"
             >
               Obter acesso por 4,90 €
@@ -371,7 +373,7 @@ function Index() {
           {/* PLANO PREMIUM */}
           <div className="relative flex flex-col rounded-3xl bg-brand-dark p-8 text-white shadow-xl">
             <span className="absolute -top-3 left-8 rounded-full bg-brand-gold px-4 py-1 text-xs font-extrabold text-brand-dark">
-              MAIS COMPLETO
+              MAIS POPULAR
             </span>
             <h3 className="text-2xl font-bold">1001 Parábolas Kids · Premium</h3>
             <p className="mt-1 text-sm text-white/60">Tudo incluído, todos os bónus</p>
@@ -400,7 +402,9 @@ function Index() {
             </ul>
 
             <a
-              href="#planos"
+              href="https://checkout.escalepay.com/7491727"
+              target="_blank"
+              rel="noopener noreferrer"
               className="mt-8 inline-flex items-center justify-center rounded-full bg-brand-green px-6 py-3 font-extrabold text-primary-foreground transition-transform hover:scale-[1.02]"
             >
               Obter Premium por 7,90 €
