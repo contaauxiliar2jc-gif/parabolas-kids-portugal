@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Countdown } from "@/components/landing/Countdown";
-import { bonuses, faqs, temas, testemunhos } from "@/components/landing/data";
+import { ParabolasCarousel } from "@/components/landing/ParabolasCarousel";
+import { bonuses, bonusesTotal, faqs, temas, testemunhos } from "@/components/landing/data";
 import heroParabolas from "@/assets/hero-parabolas.webp.asset.json";
 import logoParabolas from "@/assets/logo-parabolas-kids.webp.asset.json";
 import temaEmocoes from "@/assets/tema-emocoes.jpg";
