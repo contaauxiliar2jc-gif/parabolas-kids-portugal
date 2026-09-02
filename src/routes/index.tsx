@@ -156,8 +156,9 @@ function Index() {
           ))}
         </div>
 
-        <p className="mt-12 text-center text-lg font-semibold">E abordamos também temas como:</p>
-        <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <ParabolasCarousel />
+
+        <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {temas.map((t) => (
             <div
               key={t.title}
