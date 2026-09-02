@@ -95,10 +95,13 @@ function Index() {
             Histórias que fortalecem a fé e o propósito com{" "}
             <strong>10 minutos por dia</strong>.
           </p>
-          <div className="mt-6 flex flex-wrap items-end justify-center gap-3">
-            <span className="text-lg text-brand-dark/70 line-through">De 14,90 €</span>
-            <span className="text-sm font-semibold">Pagamento único de apenas</span>
-            <span className="text-4xl font-bold text-brand-green">4,90 €</span>
+          <div className="mt-6 text-center">
+            <p className="text-base font-extrabold uppercase tracking-wide text-brand-gold">
+              Aproveite o desconto
+            </p>
+            <p className="mt-2 text-lg text-brand-dark/70 line-through">De 6,90 €</p>
+            <p className="text-sm font-semibold">para</p>
+            <p className="text-4xl font-bold text-brand-green">4,90 €</p>
           </div>
           <p className="mt-3 text-sm font-bold text-brand-green">
             🛡️ Garantia incondicional de 15 dias — risco zero!
