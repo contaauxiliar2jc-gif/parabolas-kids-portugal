@@ -68,41 +68,47 @@ function Index() {
 
       {/* HERO */}
       <Section className="bg-brand-cream">
-        <div className="grid items-center gap-10 md:grid-cols-2">
-          <div className="text-center md:text-left">
-            <span className="inline-block rounded-full bg-brand-gold/25 px-4 py-1 text-sm font-bold text-brand-dark">
-              Feito para famílias portuguesas
-            </span>
-            <h1 className="mt-4 text-4xl leading-tight font-bold sm:text-5xl">
-              <span className="text-brand-green">1001 Parábolas Kids</span> para ensinar valores em
-              casa
-            </h1>
-            <p className="mt-4 text-lg text-brand-dark/80">
-              Histórias que fortalecem a fé e o propósito com{" "}
-              <strong>10 minutos por dia</strong>.
-            </p>
-            <div className="mt-6 flex flex-wrap items-end justify-center gap-3 md:justify-start">
-              <span className="text-lg text-brand-dark/70 line-through">De 14,90 €</span>
-              <span className="text-sm font-semibold">Pagamento único de apenas</span>
-              <span className="text-4xl font-bold text-brand-green">4,90 €</span>
-            </div>
-            <p className="mt-3 text-sm font-bold text-brand-green">
-              🛡️ Garantia incondicional de 15 dias — risco zero!
-            </p>
-            <p className="mt-1 text-sm font-bold text-red-600">
-              Sem mensalidades. Paga uma vez e fica com acesso para sempre.
-            </p>
-            <div className="mt-8">
-              <CTA />
-            </div>
-          </div>
+        <div className="mx-auto max-w-4xl text-center">
           <img
-            src={mockup}
-            alt="Coleção 1001 Parábolas Kids em livro e tablet"
-            width={1024}
-            height={800}
-            className="w-full rounded-3xl shadow-xl"
+            src={logoParabolas.url}
+            alt="Logo 1001 Parábolas Kids"
+            width={80}
+            height={80}
+            className="mx-auto mb-3 h-20 w-20"
           />
+          <span className="inline-block rounded-full bg-brand-gold/25 px-4 py-1 text-sm font-bold text-brand-dark">
+            Feito para famílias portuguesas
+          </span>
+          <h1 className="mt-4 text-4xl leading-tight font-bold sm:text-5xl">
+            <span className="text-brand-green">1001 Parábolas Kids</span> para ensinar valores e
+            princípios bíblicos às crianças em casa com apenas 10 minutos por dia
+          </h1>
+          <img
+            src={heroParabolas.url}
+            alt="Exemplos de parábolas kids com animais e valores bíblicos"
+            width={1200}
+            height={600}
+            loading="eager"
+            className="mx-auto mt-6 w-full max-w-3xl rounded-3xl shadow-xl"
+          />
+          <p className="mt-6 text-lg text-brand-dark/80">
+            Histórias que fortalecem a fé e o propósito com{" "}
+            <strong>10 minutos por dia</strong>.
+          </p>
+          <div className="mt-6 flex flex-wrap items-end justify-center gap-3">
+            <span className="text-lg text-brand-dark/70 line-through">De 14,90 €</span>
+            <span className="text-sm font-semibold">Pagamento único de apenas</span>
+            <span className="text-4xl font-bold text-brand-green">4,90 €</span>
+          </div>
+          <p className="mt-3 text-sm font-bold text-brand-green">
+            🛡️ Garantia incondicional de 15 dias — risco zero!
+          </p>
+          <p className="mt-1 text-sm font-bold text-red-600">
+            Sem mensalidades. Paga uma vez e fica com acesso para sempre.
+          </p>
+          <div className="mt-8">
+            <CTA />
+          </div>
         </div>
       </Section>
 
