@@ -1,7 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Countdown } from "@/components/landing/Countdown";
 import { bonuses, faqs, temas, testemunhos } from "@/components/landing/data";
-import mockup from "@/assets/mockup-central.jpg";
+import heroParabolas from "@/assets/hero-parabolas.webp.asset.json";
+import logoParabolas from "@/assets/logo-parabolas-kids.webp.asset.json";
 import temaEmocoes from "@/assets/tema-emocoes.jpg";
 import temaFe from "@/assets/tema-fe.jpg";
 import kitAtividades from "@/assets/kit-atividades.jpg";
@@ -67,41 +68,47 @@ function Index() {
 
       {/* HERO */}
       <Section className="bg-brand-cream">
-        <div className="grid items-center gap-10 md:grid-cols-2">
-          <div className="text-center md:text-left">
-            <span className="inline-block rounded-full bg-brand-gold/25 px-4 py-1 text-sm font-bold text-brand-dark">
-              Feito para famílias portuguesas
-            </span>
-            <h1 className="mt-4 text-4xl leading-tight font-bold sm:text-5xl">
-              <span className="text-brand-green">1001 Parábolas Kids</span> para ensinar valores em
-              casa
-            </h1>
-            <p className="mt-4 text-lg text-brand-dark/80">
-              Histórias que fortalecem a fé e o propósito com{" "}
-              <strong>10 minutos por dia</strong>.
-            </p>
-            <div className="mt-6 flex flex-wrap items-end justify-center gap-3 md:justify-start">
-              <span className="text-lg text-brand-dark/70 line-through">De 14,90 €</span>
-              <span className="text-sm font-semibold">Pagamento único de apenas</span>
-              <span className="text-4xl font-bold text-brand-green">4,90 €</span>
-            </div>
-            <p className="mt-3 text-sm font-bold text-brand-green">
-              🛡️ Garantia incondicional de 15 dias — risco zero!
-            </p>
-            <p className="mt-1 text-sm font-bold text-red-600">
-              Sem mensalidades. Paga uma vez e fica com acesso para sempre.
-            </p>
-            <div className="mt-8">
-              <CTA />
-            </div>
-          </div>
+        <div className="mx-auto max-w-4xl text-center">
           <img
-            src={mockup}
-            alt="Coleção 1001 Parábolas Kids em livro e tablet"
-            width={1024}
-            height={800}
-            className="w-full rounded-3xl shadow-xl"
+            src={logoParabolas.url}
+            alt="Logo 1001 Parábolas Kids"
+            width={80}
+            height={80}
+            className="mx-auto mb-3 h-20 w-20"
           />
+          <span className="inline-block rounded-full bg-brand-gold/25 px-4 py-1 text-sm font-bold text-brand-dark">
+            Feito para famílias portuguesas
+          </span>
+          <h1 className="mt-4 text-4xl leading-tight font-bold sm:text-5xl">
+            <span className="text-brand-green">1001 Parábolas Kids</span> para ensinar valores e
+            princípios bíblicos às crianças em casa com apenas 10 minutos por dia
+          </h1>
+          <img
+            src={heroParabolas.url}
+            alt="Exemplos de parábolas kids com animais e valores bíblicos"
+            width={1200}
+            height={600}
+            loading="eager"
+            className="mx-auto mt-6 w-full max-w-3xl rounded-3xl shadow-xl"
+          />
+          <p className="mt-6 text-lg text-brand-dark/80">
+            Histórias que fortalecem a fé e o propósito com{" "}
+            <strong>10 minutos por dia</strong>.
+          </p>
+          <div className="mt-6 flex flex-wrap items-end justify-center gap-3">
+            <span className="text-lg text-brand-dark/70 line-through">De 14,90 €</span>
+            <span className="text-sm font-semibold">Pagamento único de apenas</span>
+            <span className="text-4xl font-bold text-brand-green">4,90 €</span>
+          </div>
+          <p className="mt-3 text-sm font-bold text-brand-green">
+            🛡️ Garantia incondicional de 15 dias — risco zero!
+          </p>
+          <p className="mt-1 text-sm font-bold text-red-600">
+            Sem mensalidades. Paga uma vez e fica com acesso para sempre.
+          </p>
+          <div className="mt-8">
+            <CTA />
+          </div>
         </div>
       </Section>
 
@@ -351,7 +358,9 @@ function Index() {
             </ul>
 
             <a
-              href="#planos"
+              href="https://checkout.escalepay.com/9086424"
+              target="_blank"
+              rel="noopener noreferrer"
               className="mt-8 inline-flex items-center justify-center rounded-full border-2 border-brand-green px-6 py-3 font-extrabold text-brand-green transition-colors hover:bg-brand-green hover:text-primary-foreground"
             >
               Obter acesso por 4,90 €
@@ -364,7 +373,7 @@ function Index() {
           {/* PLANO PREMIUM */}
           <div className="relative flex flex-col rounded-3xl bg-brand-dark p-8 text-white shadow-xl">
             <span className="absolute -top-3 left-8 rounded-full bg-brand-gold px-4 py-1 text-xs font-extrabold text-brand-dark">
-              MAIS COMPLETO
+              MAIS POPULAR
             </span>
             <h3 className="text-2xl font-bold">1001 Parábolas Kids · Premium</h3>
             <p className="mt-1 text-sm text-white/60">Tudo incluído, todos os bónus</p>
@@ -393,7 +402,9 @@ function Index() {
             </ul>
 
             <a
-              href="#planos"
+              href="https://checkout.escalepay.com/7491727"
+              target="_blank"
+              rel="noopener noreferrer"
               className="mt-8 inline-flex items-center justify-center rounded-full bg-brand-green px-6 py-3 font-extrabold text-primary-foreground transition-transform hover:scale-[1.02]"
             >
               Obter Premium por 7,90 €
