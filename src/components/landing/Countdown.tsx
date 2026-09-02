@@ -21,7 +21,7 @@ export function Countdown() {
 
   return (
     <div className="flex flex-wrap items-center justify-center gap-2 bg-brand-dark px-4 py-2 text-center text-sm text-white/80">
-      <span>⏰ Desconto disponível até: hoje —</span>
+      <span>⏰ Desconto disponível apenas por:</span>
       <span className="flex items-center gap-1 font-bold text-white">
         {[pad(h), pad(m), pad(s)].map((v, i) => (
           <span key={i} className="flex items-center gap-1">
