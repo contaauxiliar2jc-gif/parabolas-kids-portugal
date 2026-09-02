@@ -78,7 +78,7 @@ export const testemunhos = [
     nome: "Sofia M.",
     local: "Braga",
     texto:
-      "Os meus filhos pedem a parábola do dia antes de dormir. Em 10 minutos falamos de fé e de valores — mudou as nossas noites.",
+      "Meu filho não ouvia e nem obedecia, zangava-se a toda a hora, chorava por tudo e por nada. Agora está muito mais comportado e é um amor de menino. Eu amei as parábolas, todas elas.",
   },
   {
     nome: "Ricardo P.",
