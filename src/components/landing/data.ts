@@ -3,27 +3,35 @@ export const bonuses = [
     n: 1,
     title: "Coleção de Atividades Interativas para Crianças",
     desc: "Atividades lúdicas e interativas para reforçar os valores aprendidos a brincar.",
-    value: "19,90 €",
+    value: "9,90 €",
   },
   {
     n: 2,
     title: "Atividades Educativas do Bom Samaritano",
     desc: "Um conjunto especial de atividades sobre a parábola do Bom Samaritano para ensinar compaixão.",
-    value: "24,90 €",
+    value: "12,90 €",
   },
   {
     n: 3,
     title: "Pequeno Devocional Infantil",
     desc: "Devocional leve e afetuoso para criar momentos diários de fé entre pais e filhos.",
-    value: "14,90 €",
+    value: "7,90 €",
   },
   {
     n: 4,
     title: "Calendário de Virtudes Imprimível",
     desc: "Um plano anual para acompanhar as virtudes trabalhadas em cada semana.",
-    value: "12,90 €",
+    value: "6,90 €",
+  },
+  {
+    n: 5,
+    title: "Músicas Cristãs Infantis Para Crianças",
+    desc: "Uma seleção de músicas cristãs infantis para cantar em família e fixar os valores de cada parábola.",
+    value: "3,90 €",
   },
 ];
+
+export const bonusesTotal = "41,40 €";
 
 export const temas = [
   { emoji: "🎯", title: "Obediência e Escolhas Certas" },
@@ -70,7 +78,7 @@ export const testemunhos = [
     nome: "Sofia M.",
     local: "Braga",
     texto:
-      "Os meus filhos pedem a parábola do dia antes de dormir. Em 10 minutos falamos de fé e de valores — mudou as nossas noites.",
+      "Meu filho não ouvia e nem obedecia, zangava-se a toda a hora, chorava por tudo e por nada. Agora está muito mais comportado e é um amor de menino. Eu amei as parábolas, todas elas.",
   },
   {
     nome: "Ricardo P.",
@@ -82,6 +90,6 @@ export const testemunhos = [
     nome: "Inês C.",
     local: "Porto",
     texto:
-      "Comecei no plano de 4,90 € e pouco depois fiz o upgrade para o Premium. Pagamento único e vale cada cêntimo pelos bónus.",
+      "Agora entendo porque Jesus ensinava com parábolas: elas têm um efeito muito grande. Há coisas que os meus filhos nunca fizeram quando eu falava com eles e agora fazem, só por causa de algumas das parábolas que escolhi contar-lhes. Este material é meeesmo muito bom, recomendo muito!",
   },
 ];

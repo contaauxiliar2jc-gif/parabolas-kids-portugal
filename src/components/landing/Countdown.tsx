@@ -1,10 +1,6 @@
 import { useEffect, useState } from "react";
 
-function endOfToday() {
-  const d = new Date();
-  d.setHours(23, 59, 59, 999);
-  return d.getTime();
-}
+const DURATION = 37 * 60 * 1000;
 
 const pad = (n: number) => String(n).padStart(2, "0");
 
@@ -12,7 +8,8 @@ export function Countdown() {
   const [left, setLeft] = useState<number | null>(null);
 
   useEffect(() => {
-    const tick = () => setLeft(Math.max(0, endOfToday() - Date.now()));
+    const end = Date.now() + DURATION;
+    const tick = () => setLeft(Math.max(0, end - Date.now()));
     tick();
     const id = setInterval(tick, 1000);
     return () => clearInterval(id);
@@ -24,7 +21,7 @@ export function Countdown() {
 
   return (
     <div className="flex flex-wrap items-center justify-center gap-2 bg-brand-dark px-4 py-2 text-center text-sm text-white/80">
-      <span>⏰ Desconto disponível até: hoje —</span>
+      <span>⏰ Desconto disponível apenas por:</span>
       <span className="flex items-center gap-1 font-bold text-white">
         {[pad(h), pad(m), pad(s)].map((v, i) => (
           <span key={i} className="flex items-center gap-1">
