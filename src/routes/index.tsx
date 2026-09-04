@@ -235,7 +235,7 @@ function Index() {
               d: "Receba imediatamente todo material e o bónus, logo após a conclusão do pagamento.",
             },
             {
-              t: "Ensine com 10 minutos por dia",
+              t: "Ensine com apenas 10 minutos por dia",
               d: "Escolha uma parábola, leia com o seu filho e viva o valor daquele dia.",
             },
           ].map((s, i) => (
