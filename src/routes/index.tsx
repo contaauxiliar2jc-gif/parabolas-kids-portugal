@@ -115,7 +115,9 @@ function Index() {
             <p className="text-base font-extrabold uppercase tracking-wide text-brand-gold">
               Aproveite o desconto
             </p>
-            <p className="mt-2 text-lg text-brand-dark/70 line-through">De 6,90 €</p>
+            <p className="mt-2 text-2xl font-bold text-red-600 line-through sm:text-3xl">
+              De 6,90 €
+            </p>
             <p className="text-sm font-semibold">para</p>
             <p className="text-4xl font-bold text-brand-green">4,90 €</p>
           </div>
@@ -230,7 +232,7 @@ function Index() {
             },
             {
               t: "Receba o acesso no seu e-mail",
-              d: "Em poucos minutos recebe o link com todo o conteúdo e bónus.",
+              d: "Acesse tudo no seu e-mail em poucos minutos e comece a usar hoje mesmo.",
             },
             {
               t: "Ensine com 10 minutos por dia",
