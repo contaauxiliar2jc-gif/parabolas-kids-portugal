@@ -1,12 +1,27 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Countdown } from "@/components/landing/Countdown";
 import { ParabolasCarousel } from "@/components/landing/ParabolasCarousel";
-import { bonuses, bonusesTotal, faqs, temas, testemunhos } from "@/components/landing/data";
+import { bonuses, bonusesTotal, faqs, temas } from "@/components/landing/data";
 import heroParabolas from "@/assets/hero-parabolas.webp.asset.json";
 import logoParabolas from "@/assets/logo-parabolas-kids.webp.asset.json";
 import temaEmocoes from "@/assets/tema-emocoes.jpg";
 import temaFe from "@/assets/tema-fe.jpg";
 import kitAtividades from "@/assets/kit-atividades.jpg";
+import depoimento1 from "@/assets/Depoimento_1.webp.asset.json";
+import depoimento2 from "@/assets/Depoimento_2.webp.asset.json";
+import depoimento3 from "@/assets/Depoimento_3.webp.asset.json";
+import depoimento4 from "@/assets/Depoimento_4.webp.asset.json";
+import depoimento5 from "@/assets/Depoimento_5.webp.asset.json";
+import depoimento6 from "@/assets/Depoimento_6.webp.asset.json";
+
+const depoimentos = [
+  { src: depoimento1.url, alt: "Depoimento de uma mãe partilhando o material 1001 Parábolas Kids com os filhos" },
+  { src: depoimento2.url, alt: "Depoimento sobre o conteúdo completo das parábolas e bónus" },
+  { src: depoimento3.url, alt: "Comentário de cliente satisfeito com a aquisição do material" },
+  { src: depoimento4.url, alt: "Várias avaliações positivas de pais e educadores" },
+  { src: depoimento5.url, alt: "Conversa de WhatsApp com elogios ao material e bónus" },
+  { src: depoimento6.url, alt: "Comentário de cliente recomendando o material" },
+];
 
 export const Route = createFileRoute("/")({
   head: () => ({
