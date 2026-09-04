@@ -45,11 +45,17 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
+function scrollToOffers(e?: React.MouseEvent) {
+  e?.preventDefault();
+  document.getElementById("planos")?.scrollIntoView({ behavior: "smooth", block: "start" });
+}
+
 function CTA({ label = "SIM! QUERO COMEÇAR AGORA" }: { label?: string }) {
   return (
     <div className="text-center">
       <a
         href="#planos"
+        onClick={scrollToOffers}
         className="inline-flex items-center justify-center gap-2 rounded-full bg-brand-green px-8 py-4 text-base font-extrabold text-primary-foreground shadow-lg transition-transform hover:scale-[1.03] sm:text-lg"
       >
         {label} →
@@ -346,7 +352,10 @@ function Index() {
       </Section>
 
       {/* PLANOS */}
-      <Section id="planos" className="bg-white">
+      <Section
+        id="planos"
+        className="relative overflow-hidden bg-gradient-to-b from-white via-brand-cream/50 to-white ring-1 ring-inset ring-brand-gold/20"
+      >
         <h2 className="text-center text-3xl font-bold sm:text-4xl">Escolha a sua oferta</h2>
         <p className="mt-3 text-center text-brand-dark/80">
           Escolha a sua oferta e aproveite esta oportunidade. Paga apenas uma vez, sem mensalidades, e com garantia de 15 dias.
