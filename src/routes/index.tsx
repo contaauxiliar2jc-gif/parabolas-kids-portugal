@@ -45,11 +45,17 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
+function scrollToOffers(e?: React.MouseEvent) {
+  e?.preventDefault();
+  document.getElementById("planos")?.scrollIntoView({ behavior: "smooth", block: "start" });
+}
+
 function CTA({ label = "SIM! QUERO COMEÇAR AGORA" }: { label?: string }) {
   return (
     <div className="text-center">
       <a
         href="#planos"
+        onClick={scrollToOffers}
         className="inline-flex items-center justify-center gap-2 rounded-full bg-brand-green px-8 py-4 text-base font-extrabold text-primary-foreground shadow-lg transition-transform hover:scale-[1.03] sm:text-lg"
       >
         {label} →
