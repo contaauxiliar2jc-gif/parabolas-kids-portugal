@@ -232,7 +232,7 @@ function Index() {
             },
             {
               t: "Receba o acesso no seu e-mail",
-              d: "Acesse tudo no seu e-mail em poucos minutos e comece a usar hoje mesmo.",
+              d: "Receba imediatamente todo material e o bónus, logo após a conclusão do pagamento.",
             },
             {
               t: "Ensine com 10 minutos por dia",
@@ -349,7 +349,7 @@ function Index() {
       <Section id="planos" className="bg-white">
         <h2 className="text-center text-3xl font-bold sm:text-4xl">Escolha a sua oferta</h2>
         <p className="mt-3 text-center text-brand-dark/80">
-          Pagamento único em euros. Paga uma só vez e fica com acesso vitalício — com garantia de 15 dias.
+          Escolha a sua oferta e aproveite esta oportunidade. Paga apenas uma vez, sem mensalidades, e com garantia de 15 dias.
         </p>
 
         <div className="mt-10 grid gap-8 lg:grid-cols-2">
