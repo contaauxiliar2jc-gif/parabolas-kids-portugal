@@ -1,12 +1,27 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Countdown } from "@/components/landing/Countdown";
 import { ParabolasCarousel } from "@/components/landing/ParabolasCarousel";
-import { bonuses, bonusesTotal, faqs, temas, testemunhos } from "@/components/landing/data";
+import { bonuses, bonusesTotal, faqs, temas } from "@/components/landing/data";
 import heroParabolas from "@/assets/hero-parabolas.webp.asset.json";
 import logoParabolas from "@/assets/logo-parabolas-kids.webp.asset.json";
 import temaEmocoes from "@/assets/tema-emocoes.jpg";
 import temaFe from "@/assets/tema-fe.jpg";
 import kitAtividades from "@/assets/kit-atividades.jpg";
+import depoimento1 from "@/assets/Depoimento_1.webp.asset.json";
+import depoimento2 from "@/assets/Depoimento_2.webp.asset.json";
+import depoimento3 from "@/assets/Depoimento_3.webp.asset.json";
+import depoimento4 from "@/assets/Depoimento_4.webp.asset.json";
+import depoimento5 from "@/assets/Depoimento_5.webp.asset.json";
+import depoimento6 from "@/assets/Depoimento_6.webp.asset.json";
+
+const depoimentos = [
+  { src: depoimento1.url, alt: "Depoimento de uma mãe partilhando o material 1001 Parábolas Kids com os filhos" },
+  { src: depoimento2.url, alt: "Depoimento sobre o conteúdo completo das parábolas e bónus" },
+  { src: depoimento3.url, alt: "Comentário de cliente satisfeito com a aquisição do material" },
+  { src: depoimento4.url, alt: "Várias avaliações positivas de pais e educadores" },
+  { src: depoimento5.url, alt: "Conversa de WhatsApp com elogios ao material e bónus" },
+  { src: depoimento6.url, alt: "Comentário de cliente recomendando o material" },
+];
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -100,7 +115,9 @@ function Index() {
             <p className="text-base font-extrabold uppercase tracking-wide text-brand-gold">
               Aproveite o desconto
             </p>
-            <p className="mt-2 text-lg text-brand-dark/70 line-through">De 6,90 €</p>
+            <p className="mt-2 text-2xl font-bold text-red-600 line-through sm:text-3xl">
+              De 6,90 €
+            </p>
             <p className="text-sm font-semibold">para</p>
             <p className="text-4xl font-bold text-brand-green">4,90 €</p>
           </div>
@@ -215,10 +232,10 @@ function Index() {
             },
             {
               t: "Receba o acesso no seu e-mail",
-              d: "Em poucos minutos recebe o link com todo o conteúdo e bónus.",
+              d: "Receba imediatamente todo material e o bónus, logo após a conclusão do pagamento.",
             },
             {
-              t: "Ensine com 10 minutos por dia",
+              t: "Ensine com apenas 10 minutos por dia",
               d: "Escolha uma parábola, leia com o seu filho e viva o valor daquele dia.",
             },
           ].map((s, i) => (
@@ -238,15 +255,24 @@ function Index() {
         <h2 className="text-center text-3xl font-bold sm:text-4xl">
           O que dizem sobre este material:
         </h2>
-        <div className="mt-10 grid gap-6 md:grid-cols-3">
-          {testemunhos.map((t) => (
-            <blockquote key={t.nome} className="rounded-3xl bg-white/5 p-6">
-              <div className="text-brand-gold">★★★★★</div>
-              <p className="mt-3 text-white/80">“{t.texto}”</p>
-              <footer className="mt-4 text-sm font-bold">
-                {t.nome} · <span className="text-white/60">{t.local}</span>
-              </footer>
-            </blockquote>
+        <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {depoimentos.map((d, i) => (
+            <a
+              key={i}
+              href={d.src}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block overflow-hidden rounded-2xl bg-white/5 ring-1 ring-white/10 transition-transform hover:scale-[1.02]"
+            >
+              <img
+                src={d.src}
+                alt={d.alt}
+                width={400}
+                height={500}
+                loading="lazy"
+                className="h-auto w-full object-cover"
+              />
+            </a>
           ))}
         </div>
       </Section>
@@ -296,7 +322,7 @@ function Index() {
       {/* BÓNUS */}
       <Section>
         <h2 className="text-center text-3xl font-bold sm:text-4xl">
-          Bónus <span className="text-brand-green">exclusivos</span> ao subscrever hoje:
+          Bónus <span className="text-brand-green">exclusivos</span> ao obter hoje:
         </h2>
         <div className="mt-10 grid gap-6 sm:grid-cols-2">
           {bonuses.map((b) => (
@@ -308,25 +334,31 @@ function Index() {
               <p className="mt-4 text-sm">
                 Valor: <span className="font-bold text-brand-gold">{b.value}</span>{" "}
                 <span className="ml-2 rounded-full bg-brand-green px-3 py-1 text-xs font-extrabold text-primary-foreground">
-                  INCLUÍDO NO PREMIUM
+                  GRÁTIS HOJE
                 </span>
               </p>
             </div>
           ))}
         </div>
+        <p className="mt-8 text-center text-lg font-bold text-brand-dark">
+          Total em bónus grátis: <span className="text-brand-gold">{bonusesTotal}</span>
+        </p>
       </Section>
 
       {/* PLANOS */}
       <Section id="planos" className="bg-white">
-        <h2 className="text-center text-3xl font-bold sm:text-4xl">Escolha o seu plano:</h2>
+        <h2 className="text-center text-3xl font-bold sm:text-4xl">Escolha a sua oferta</h2>
         <p className="mt-3 text-center text-brand-dark/80">
-          Dois planos de pagamento único em euros. Paga uma só vez, sem mensalidades, e fica com acesso para sempre — com garantia de 15 dias.
+          Escolha a sua oferta e aproveite esta oportunidade. Paga apenas uma vez, sem mensalidades, e com garantia de 15 dias.
         </p>
 
         <div className="mt-10 grid gap-8 lg:grid-cols-2">
           {/* PLANO BÁSICO */}
           <div className="flex flex-col rounded-3xl bg-brand-cream p-8 ring-1 ring-brand-dark/10">
-            <h3 className="text-2xl font-bold">395 Parábolas Kids</h3>
+            <span className="w-fit rounded-full bg-brand-dark/10 px-3 py-1 text-xs font-extrabold uppercase tracking-wide text-brand-dark">
+              Oferta Básica
+            </span>
+            <h3 className="mt-3 text-2xl font-bold">395 Parábolas Kids</h3>
             <p className="mt-1 text-sm text-brand-dark/70">Para começar a ensinar em casa</p>
             <div className="mt-6 flex items-end gap-2">
               <span className="text-5xl font-bold text-brand-dark">4,90 €</span>
@@ -334,7 +366,7 @@ function Index() {
             </div>
             <ul className="mt-6 space-y-2 text-brand-dark/80">
               <li>✅ 395 parábolas ilustradas</li>
-              <li>✅ Versículo, lição, Missão Kids e oração</li>
+              <li>✅ Parábola, Versículo, Lição</li>
               <li>✅ Ficheiros PDF prontos a imprimir</li>
               <li>✅ Acesso em telemóvel, tablet e computador</li>
             </ul>
@@ -380,7 +412,10 @@ function Index() {
             <span className="absolute -top-3 left-8 rounded-full bg-brand-gold px-4 py-1 text-xs font-extrabold text-brand-dark">
               MAIS POPULAR
             </span>
-            <h3 className="text-2xl font-bold">1001 Parábolas Kids · Premium</h3>
+            <span className="w-fit rounded-full bg-white/15 px-3 py-1 text-xs font-extrabold uppercase tracking-wide text-white">
+              Oferta Completa
+            </span>
+            <h3 className="mt-3 text-2xl font-bold">1001 Parábolas Kids · Premium</h3>
             <p className="mt-1 text-sm text-white/60">Tudo incluído, todos os bónus</p>
             <div className="mt-6 flex items-end gap-2">
               <span className="text-5xl font-bold text-brand-gold">7,90 €</span>
@@ -388,7 +423,7 @@ function Index() {
             </div>
             <ul className="mt-6 space-y-2 text-white/80">
               <li>✅ 1001 parábolas ilustradas (coleção completa)</li>
-              <li>✅ Versículo, lição, Missão Kids e oração</li>
+              <li>✅ Parábola, Versículo, Lição</li>
               <li>✅ Ficheiros PDF prontos a imprimir</li>
               <li>✅ Novos conteúdos todos os meses</li>
               <li>✅ +50 virtudes e valores cristãos abordados</li>
@@ -433,13 +468,14 @@ function Index() {
             <tbody className="divide-y divide-brand-dark/10 bg-white">
               {[
                 ["Número de parábolas", "395", "1001"],
-                ["Missão Kids e oração", "sim", "sim"],
+                ["Parábola, Versículo, Lição", "sim", "sim"],
                 ["PDF para imprimir", "sim", "sim"],
                 ["Novos conteúdos mensais", "nao", "sim"],
                 [`Bónus 1 — ${bonuses[0]!.title}`, "sim", "sim"],
                 [`Bónus 2 — ${bonuses[1]!.title}`, "nao", "sim"],
                 [`Bónus 3 — ${bonuses[2]!.title}`, "nao", "sim"],
                 [`Bónus 4 — ${bonuses[3]!.title}`, "nao", "sim"],
+                [`Bónus 5 — ${bonuses[4]!.title}`, "nao", "sim"],
               ].map(([label, a, b]) => (
                 <tr key={label}>
                   <td className="p-4 text-brand-dark/80">{label}</td>
