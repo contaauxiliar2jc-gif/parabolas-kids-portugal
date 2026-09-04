@@ -253,15 +253,24 @@ function Index() {
         <h2 className="text-center text-3xl font-bold sm:text-4xl">
           O que dizem sobre este material:
         </h2>
-        <div className="mt-10 grid gap-6 md:grid-cols-3">
-          {testemunhos.map((t) => (
-            <blockquote key={t.nome} className="rounded-3xl bg-white/5 p-6">
-              <div className="text-brand-gold">★★★★★</div>
-              <p className="mt-3 text-white/80">“{t.texto}”</p>
-              <footer className="mt-4 text-sm font-bold">
-                {t.nome} · <span className="text-white/60">{t.local}</span>
-              </footer>
-            </blockquote>
+        <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {depoimentos.map((d, i) => (
+            <a
+              key={i}
+              href={d.src}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block overflow-hidden rounded-2xl bg-white/5 ring-1 ring-white/10 transition-transform hover:scale-[1.02]"
+            >
+              <img
+                src={d.src}
+                alt={d.alt}
+                width={400}
+                height={500}
+                loading="lazy"
+                className="h-auto w-full object-cover"
+              />
+            </a>
           ))}
         </div>
       </Section>
