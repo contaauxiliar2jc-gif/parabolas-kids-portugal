@@ -468,13 +468,14 @@ function Index() {
             <tbody className="divide-y divide-brand-dark/10 bg-white">
               {[
                 ["Número de parábolas", "395", "1001"],
-                ["Missão Kids e oração", "sim", "sim"],
+                ["Parábola, Versículo, Lição", "sim", "sim"],
                 ["PDF para imprimir", "sim", "sim"],
                 ["Novos conteúdos mensais", "nao", "sim"],
                 [`Bónus 1 — ${bonuses[0]!.title}`, "sim", "sim"],
                 [`Bónus 2 — ${bonuses[1]!.title}`, "nao", "sim"],
                 [`Bónus 3 — ${bonuses[2]!.title}`, "nao", "sim"],
                 [`Bónus 4 — ${bonuses[3]!.title}`, "nao", "sim"],
+                [`Bónus 5 — ${bonuses[4]!.title}`, "nao", "sim"],
               ].map(([label, a, b]) => (
                 <tr key={label}>
                   <td className="p-4 text-brand-dark/80">{label}</td>
