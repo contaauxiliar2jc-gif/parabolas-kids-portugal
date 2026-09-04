@@ -347,15 +347,18 @@ function Index() {
 
       {/* PLANOS */}
       <Section id="planos" className="bg-white">
-        <h2 className="text-center text-3xl font-bold sm:text-4xl">Escolha o seu plano:</h2>
+        <h2 className="text-center text-3xl font-bold sm:text-4xl">Escolha a sua oferta</h2>
         <p className="mt-3 text-center text-brand-dark/80">
-          Dois planos de pagamento único em euros. Paga uma só vez, sem mensalidades, e fica com acesso para sempre — com garantia de 15 dias.
+          Pagamento único em euros. Paga uma só vez e fica com acesso vitalício — com garantia de 15 dias.
         </p>
 
         <div className="mt-10 grid gap-8 lg:grid-cols-2">
           {/* PLANO BÁSICO */}
           <div className="flex flex-col rounded-3xl bg-brand-cream p-8 ring-1 ring-brand-dark/10">
-            <h3 className="text-2xl font-bold">395 Parábolas Kids</h3>
+            <span className="w-fit rounded-full bg-brand-dark/10 px-3 py-1 text-xs font-extrabold uppercase tracking-wide text-brand-dark">
+              Oferta Básica
+            </span>
+            <h3 className="mt-3 text-2xl font-bold">395 Parábolas Kids</h3>
             <p className="mt-1 text-sm text-brand-dark/70">Para começar a ensinar em casa</p>
             <div className="mt-6 flex items-end gap-2">
               <span className="text-5xl font-bold text-brand-dark">4,90 €</span>
@@ -363,7 +366,7 @@ function Index() {
             </div>
             <ul className="mt-6 space-y-2 text-brand-dark/80">
               <li>✅ 395 parábolas ilustradas</li>
-              <li>✅ Versículo, lição, Missão Kids e oração</li>
+              <li>✅ Parábola, Versículo, Lição</li>
               <li>✅ Ficheiros PDF prontos a imprimir</li>
               <li>✅ Acesso em telemóvel, tablet e computador</li>
             </ul>
