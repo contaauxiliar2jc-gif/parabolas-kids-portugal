@@ -412,7 +412,10 @@ function Index() {
             <span className="absolute -top-3 left-8 rounded-full bg-brand-gold px-4 py-1 text-xs font-extrabold text-brand-dark">
               MAIS POPULAR
             </span>
-            <h3 className="text-2xl font-bold">1001 Parábolas Kids · Premium</h3>
+            <span className="w-fit rounded-full bg-white/15 px-3 py-1 text-xs font-extrabold uppercase tracking-wide text-white">
+              Oferta Completa
+            </span>
+            <h3 className="mt-3 text-2xl font-bold">1001 Parábolas Kids · Premium</h3>
             <p className="mt-1 text-sm text-white/60">Tudo incluído, todos os bónus</p>
             <div className="mt-6 flex items-end gap-2">
               <span className="text-5xl font-bold text-brand-gold">7,90 €</span>
@@ -420,7 +423,7 @@ function Index() {
             </div>
             <ul className="mt-6 space-y-2 text-white/80">
               <li>✅ 1001 parábolas ilustradas (coleção completa)</li>
-              <li>✅ Versículo, lição, Missão Kids e oração</li>
+              <li>✅ Parábola, Versículo, Lição</li>
               <li>✅ Ficheiros PDF prontos a imprimir</li>
               <li>✅ Novos conteúdos todos os meses</li>
               <li>✅ +50 virtudes e valores cristãos abordados</li>
