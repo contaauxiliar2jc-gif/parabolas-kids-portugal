@@ -352,7 +352,10 @@ function Index() {
       </Section>
 
       {/* PLANOS */}
-      <Section id="planos" className="bg-white">
+      <Section
+        id="planos"
+        className="relative overflow-hidden bg-gradient-to-b from-white via-brand-cream/50 to-white ring-1 ring-inset ring-brand-gold/20"
+      >
         <h2 className="text-center text-3xl font-bold sm:text-4xl">Escolha a sua oferta</h2>
         <p className="mt-3 text-center text-brand-dark/80">
           Escolha a sua oferta e aproveite esta oportunidade. Paga apenas uma vez, sem mensalidades, e com garantia de 15 dias.
