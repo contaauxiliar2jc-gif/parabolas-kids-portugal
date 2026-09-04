@@ -322,7 +322,7 @@ function Index() {
       {/* BÓNUS */}
       <Section>
         <h2 className="text-center text-3xl font-bold sm:text-4xl">
-          Bónus <span className="text-brand-green">exclusivos</span> ao subscrever hoje:
+          Bónus <span className="text-brand-green">exclusivos</span> ao obter hoje:
         </h2>
         <div className="mt-10 grid gap-6 sm:grid-cols-2">
           {bonuses.map((b) => (
@@ -334,12 +334,15 @@ function Index() {
               <p className="mt-4 text-sm">
                 Valor: <span className="font-bold text-brand-gold">{b.value}</span>{" "}
                 <span className="ml-2 rounded-full bg-brand-green px-3 py-1 text-xs font-extrabold text-primary-foreground">
-                  INCLUÍDO NO PREMIUM
+                  GRÁTIS HOJE
                 </span>
               </p>
             </div>
           ))}
         </div>
+        <p className="mt-8 text-center text-lg font-bold text-brand-dark">
+          Total em bónus grátis: <span className="text-brand-gold">{bonusesTotal}</span>
+        </p>
       </Section>
 
       {/* PLANOS */}
