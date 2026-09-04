@@ -57,7 +57,7 @@ export const faqs = [
   },
   {
     q: "Qual é a diferença entre os dois planos?",
-    a: "O plano 395 Parábolas Kids dá acesso a 395 histórias e a 1 bónus. O plano Premium 1001 Parábolas Kids inclui as 1001 histórias e todos os 4 bónus.",
+    a: "O plano 395 Parábolas Kids dá acesso a 395 histórias e a 1 bónus. O plano Premium 1001 Parábolas Kids inclui as 1001 histórias e todos os 5 bónus.",
   },
   {
     q: "É um pagamento único ou uma subscrição?",
