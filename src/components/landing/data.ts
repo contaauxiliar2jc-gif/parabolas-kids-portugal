@@ -31,7 +31,7 @@ export const bonuses = [
   },
 ];
 
-export const bonusesTotal = "41,40 €";
+export const bonusesTotal = "41,50 €";
 
 export const temas = [
   { emoji: "🎯", title: "Obediência e Escolhas Certas" },
