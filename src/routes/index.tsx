@@ -363,7 +363,7 @@ function Index() {
 
         <div className="mt-10 grid gap-8 lg:grid-cols-2">
           {/* PLANO BÁSICO */}
-          <div className="flex flex-col rounded-3xl bg-brand-cream p-8 ring-1 ring-brand-dark/10">
+          <div className="order-2 flex flex-col rounded-3xl bg-brand-cream p-8 ring-1 ring-brand-dark/10 lg:order-1">
             <span className="w-fit rounded-full bg-brand-dark/10 px-3 py-1 text-xs font-extrabold uppercase tracking-wide text-brand-dark">
               Oferta Básica
             </span>
@@ -417,7 +417,7 @@ function Index() {
           </div>
 
           {/* PLANO PREMIUM */}
-          <div className="relative flex flex-col rounded-3xl bg-brand-dark p-8 text-white shadow-xl">
+          <div className="relative order-1 flex flex-col rounded-3xl bg-brand-dark p-8 text-white shadow-xl lg:order-2">
             <span className="absolute -top-3 left-8 rounded-full bg-brand-gold px-4 py-1 text-xs font-extrabold text-brand-dark">
               MAIS POPULAR
             </span>
