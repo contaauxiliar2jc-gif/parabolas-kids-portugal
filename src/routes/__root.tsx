@@ -110,6 +110,42 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
   errorComponent: ErrorComponent,
 });
 
+function MetaPixel() {
+  useEffect(() => {
+    const w = window as any;
+    if (w.fbq) return;
+    const n: any = (w.fbq = function (...args: unknown[]) {
+      n.callMethod ? n.callMethod.apply(n, args) : n.queue.push(args);
+    });
+    if (!w._fbq) w._fbq = n;
+    n.push = n;
+    n.loaded = true;
+    n.version = "2.0";
+    n.queue = [];
+    const t = document.createElement("script");
+    t.async = true;
+    t.src = "https://connect.facebook.net/en_US/fbevents.js";
+    document.head.appendChild(t);
+    w.fbq("init", "1614383267374712");
+    w.fbq("track", "PageView");
+  }, []);
+  return null;
+}
+
+function MetaPixelNoScript() {
+  return (
+    <noscript>
+      <img
+        height="1"
+        width="1"
+        style={{ display: "none" }}
+        src="https://www.facebook.com/tr?id=1614383267374712&ev=PageView&noscript=1"
+        alt=""
+      />
+    </noscript>
+  );
+}
+
 function RootShell({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
@@ -117,7 +153,9 @@ function RootShell({ children }: { children: ReactNode }) {
         <HeadContent />
       </head>
       <body>
+        <MetaPixel />
         {children}
+        <MetaPixelNoScript />
         <Scripts />
       </body>
     </html>
