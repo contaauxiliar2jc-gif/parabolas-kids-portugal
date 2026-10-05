@@ -102,8 +102,8 @@ function Index() {
             Feito para famílias portuguesas
           </span>
           <h1 className="mt-4 text-4xl leading-tight font-bold sm:text-5xl">
-            <span className="text-brand-green">1001 Parábolas Kids</span> para ensinar valores e
-            princípios bíblicos às crianças em casa com apenas 10 minutos por dia
+            <span className="text-brand-green">Para Pais que querem ajudar seus filhos</span> a
+            aproximar-se de Deus, aprender bons valores e passar menos tempo agarrado ao ecrã.
           </h1>
           <img
             src={heroParabolas.url}
